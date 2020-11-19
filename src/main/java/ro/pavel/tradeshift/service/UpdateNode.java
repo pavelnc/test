@@ -15,7 +15,7 @@ public class UpdateNode {
 	private NodeRepo nodeRepo;
 
 	public void update(NodeDt nodeDt) {
-		boolean match = nodeRepo.getTopNodesIDs(nodeDt.getId().longValue()).stream().anyMatch(aLong -> aLong.equals(nodeDt.getParent().longValue()));
+		boolean match = nodeRepo.getTopNodesIDs(nodeDt.getId().longValue()).stream().anyMatch(number -> number.longValue() == nodeDt.getParent().longValue());
 		if (match) {
 			throw new IllegalArgumentException(" Node can not be updated");
 		}

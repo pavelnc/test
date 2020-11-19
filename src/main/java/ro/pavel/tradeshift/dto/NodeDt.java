@@ -1,51 +1,18 @@
 package ro.pavel.tradeshift.dto;
 
-import java.math.BigInteger;
-
 public class NodeDt {
-	private BigInteger id;
+	private Number id;
 	private String description;
-	private BigInteger parent;
+	private Number parent;
 	private String path;
-	private BigInteger lvl;
+	private Number lvl;
 
-	public NodeDt() {
-	}
 
-	public NodeDt(Object[] objects) {
-
-		lvl = (BigInteger) objects[3];
-		setNodeValues(objects);
-	}
-
-	private void setNodeValues(Object[] objects) {
-		if (objects[0] != null) {
-			if (objects[0] instanceof Integer) {
-				parent = BigInteger.valueOf((Integer) objects[0]);
-			} else {
-				parent = (BigInteger) objects[0];
-			}
-		}
-		if (objects[1] instanceof Integer) {
-			id = BigInteger.valueOf((Integer) objects[1]);
-		} else {
-			id = (BigInteger) objects[1];
-		}
-		description = (String) objects[2];
-
-		path = (String) objects[4];
-	}
-
-	public NodeDt(Object[] objects, int size) {
-		lvl = BigInteger.valueOf(size - ((BigInteger) objects[3]).intValue());
-		setNodeValues(objects);
-	}
-
-	public BigInteger getId() {
+	public Number getId() {
 		return id;
 	}
 
-	public void setId(BigInteger id) {
+	public void setId(Number id) {
 		this.id = id;
 	}
 
@@ -57,11 +24,11 @@ public class NodeDt {
 		this.description = description;
 	}
 
-	public BigInteger getParent() {
+	public Number getParent() {
 		return parent;
 	}
 
-	public void setParent(BigInteger parent) {
+	public void setParent(Number parent) {
 		this.parent = parent;
 	}
 
@@ -73,11 +40,11 @@ public class NodeDt {
 		this.path = path;
 	}
 
-	public BigInteger getLvl() {
+	public Number getLvl() {
 		return lvl;
 	}
 
-	public void setLvl(BigInteger lvl) {
+	public void setLvl(Number lvl) {
 		this.lvl = lvl;
 	}
 }

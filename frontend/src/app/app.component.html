@@ -1,0 +1,33 @@
+
+
+<form [formGroup]="changeForm" (ngSubmit)="changeNode()" class="">
+  <div >
+    Node ID<input type="number"  placeholder="1" formControlName="id">
+    Parent ID<input type="number"  placeholder="1" formControlName="parent">
+    <button type="submit">Change Node</button>
+  </div>
+</form>
+
+<form [formGroup]="nodeForm" (ngSubmit)="getNode()" class="">
+  <div >
+    <input type="number"  placeholder="1" formControlName="id">
+    <button type="submit">Get Node</button>
+  </div>
+</form>
+<table>
+  <thead>
+  <td>id</td>
+  <td>description</td>
+  <td>lvl</td>
+  <td>path</td>
+  <td>parent</td>
+  </thead>
+  <tr *ngFor="let node of nodes ">
+    <td>{{node.id}}</td>
+    <td>{{node.description}}</td>
+    <td>{{node.lvl}}</td>
+    <td>{{node.path}}</td>
+    <td>{{node.parent}}</td>
+  </tr>
+</table>
+

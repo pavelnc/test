@@ -14,16 +14,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication(
 		exclude = {DataSourceAutoConfiguration.class,
 				HibernateJpaAutoConfiguration.class,
-				DataSourceTransactionManagerAutoConfiguration.class})
+				DataSourceTransactionManagerAutoConfiguration.class},
+		scanBasePackages = "ro.pavel.tradeshift")
 @EnableTransactionManagement
 @ImportResource({"classpath:spring/tradeshift-beans.xml"})
-@ComponentScan(basePackages = {"ro.pavel.tradeshift"})
 public class Application extends SpringBootServletInitializer {
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
-
 
 }

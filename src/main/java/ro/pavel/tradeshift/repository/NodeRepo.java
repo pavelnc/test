@@ -35,7 +35,7 @@ public interface NodeRepo extends JpaRepository<Node, Long> {
 			"      ON cp.parent = c.id" +
 			")" +
 			"SELECT  category_path.id as id FROM category_path")
-	List<Long> getTopNodesIDs(@Param("nodeId") Long nodeId);
+	List<Number> getTopNodesIDs(@Param("nodeId") Long nodeId);
 
 	@Query(nativeQuery = true, value = "WITH RECURSIVE category_path (id, description, parent, path, lvl) AS" +
 			"(" +
