@@ -32,7 +32,7 @@ public class GetNodesTest {
 
 		// when
 		when(nodeRepo.getTopNodes(nodeId)).thenReturn(Collections.singletonList(new Object[]{BigInteger.ONE, BigInteger.ONE, "description", BigInteger.ZERO, "path"}));
-		when(nodeRepo.getSubTree(nodeId, 3)).thenReturn(Collections.singletonList(new Object[]{BigInteger.ONE, BigInteger.ONE, "description", BigInteger.ONE, "path"}));
+		when(nodeRepo.getSubTree(nodeId, 2)).thenReturn(Collections.singletonList(new Object[]{BigInteger.ONE, BigInteger.ONE, "description", BigInteger.ONE, "path"}));
 		// then
 		assertEquals(2, getNodes.getNodes(nodeId).size());
 	}
